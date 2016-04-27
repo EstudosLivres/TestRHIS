@@ -1,0 +1,30 @@
+# encoding: UTF-8
+# pt-BR translations for Models
+pt-BR:
+  activerecord:
+    models:
+      course: Curso
+      student: Estudante
+      classroom: Matrícula
+
+    attributes:
+
+  # Course -----------------------------------------------------
+      course:
+        name: Nome
+        description: Descrição
+        status: Estado
+
+  # Student -----------------------------------------------------
+      student:
+        name: Nome
+        register_number: Número de Registro
+        status: Estado
+
+  # Classroom -----------------------------------------------------
+      classroom:
+        student: Estudante
+        student_id: Estudante
+        course: Curso
+        course_id: Curso
+        entry_at: Vinculado às

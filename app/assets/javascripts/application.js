@@ -1,9 +1,8 @@
 // Rails Frameworks
 //=require jquery
+//=require jquery.turbolinks
 //=require jquery_ujs
 //=require turbolinks
-//=require_tree .
-
 
 // PlugIns
 //=require nprogress
@@ -20,9 +19,3 @@
 
 // App Files
 //= require_tree ./app
-
-function setup() {
-}
-
-$(document).ready(setup);
-$(document).on('page:load', setup);

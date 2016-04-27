@@ -1,25 +1,27 @@
-h1 Listing courses
-
-table
-  thead
-    tr
-      th Name
-      th Description
-      th Status
-      th
-      th
-      th
-
-  tbody
-    - @courses.each do |course|
-      tr
-        td = course.name
-        td = course.description
-        td = course.status
-        td = link_to 'Show', course
-        td = link_to 'Edit', edit_course_path(course)
-        td = link_to 'Destroy', course, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-br
-
-= link_to 'New Course', new_course_path
+.row
+  .col-md-12
+    .card
+      .header
+        h4.title =t('actions.courses.index')
+        p.category Acesse o link Turmas para Associar Alunos ao Curso
+      .content.table-responsive.table-full-width
+        table.table.table-striped
+          thead
+            tr
+              th ID
+              th Name
+              th Description
+              th Status
+              th
+              th
+              th
+          tbody
+            - @courses.each do |course|
+              tr
+                td =course.id
+                td = course.name
+                td = course.description
+                td = course.status
+                td = link_to 'Show', course
+                td = link_to 'Edit', edit_course_path(course)
+                td = link_to 'Destroy', course, data: {:confirm => 'Are you sure?'}, :method => :delete

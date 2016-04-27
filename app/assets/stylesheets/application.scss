@@ -4,14 +4,14 @@
  *= require themify-icons
  *= require creative-tim/paper_dashboard/bootstrap.min
  *= require creative-tim/paper_dashboard/animate.min
- *= require creative-tim/paper_dashboard/paper-dashboard
  *= require creative-tim/paper_dashboard/demo
+ *= require creative-tim/paper_dashboard/paper-dashboard
  *
  * Fixes
  *= stub scaffolds.scss
  *
  * My Styles
- *= require_tree .
+ *= require_tree ./app
 */
 
 @import 'ionicons';

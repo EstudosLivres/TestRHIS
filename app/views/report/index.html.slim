@@ -1,2 +1,9 @@
-h1 Report#index
-p Find me in app/views/report/index.html.slim
+.row
+  .col-lg-3.col-sm-6
+    =render 'report/partials/capacity_card'
+  .col-lg-3.col-sm-6
+    =render 'report/partials/revenue_card'
+  .col-lg-3.col-sm-6
+    =render 'report/partials/error_card'
+  .col-lg-3.col-sm-6
+    =render 'report/partials/twitter_card'

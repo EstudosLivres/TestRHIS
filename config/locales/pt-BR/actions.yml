@@ -1,0 +1,31 @@
+# encoding: UTF-8
+# pt-BR translations for Controllers Actions
+pt-BR:
+  actions:
+    classrooms:
+      index: Lista de  Turmas e Matrículas
+      show: Turma e Matrícula
+      new: Matricular
+      create: Matricular
+      edit: Atualizar Matrícula
+      update: Atualizar Matrícula
+
+    courses:
+      index: Lista de Cursos
+      show: Curso
+      new: Cadastro de Curso
+      create: Cadastro de Curso
+      edit: Atualizar Curso
+      update: Atualizar Curso
+
+
+    report:
+      index: Relatório
+
+    students:
+      index: Lista de Estudantes
+      show: Estudante
+      new: Cadastro de Estudante
+      create: Cadastro de Estudante
+      edit: Atualizar Estudante
+      update: Atualizar Estudante

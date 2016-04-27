@@ -1,25 +1,25 @@
-h1 Listing classrooms
-
-table
-  thead
-    tr
-      th Student
-      th Course
-      th Entry at
-      th
-      th
-      th
-
-  tbody
-    - @classrooms.each do |classroom|
-      tr
-        td = classroom.student
-        td = classroom.course
-        td = classroom.entry_at
-        td = link_to 'Show', classroom
-        td = link_to 'Edit', edit_classroom_path(classroom)
-        td = link_to 'Destroy', classroom, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-br
-
-= link_to 'New Classroom', new_classroom_path
+.row
+  .col-md-12
+    .card
+      .header
+        h4.title Lista de Turmas
+        p.category Associe quantos alunos quiser a cada Turma
+      .content.table-responsive.table-full-width
+        table.table.table-striped
+          thead
+            tr
+              th Curso
+              th Total de Estudantes
+              th
+              th
+              th
+              th
+          tbody
+            - @classrooms.each do |classroom|
+              tr
+                td = classroom.student
+                td = classroom.course
+                td = classroom.entry_at
+                td = link_to 'Show', classroom
+                td = link_to 'Edit', edit_classroom_path(classroom)
+                td = link_to 'Destroy', classroom, data: {:confirm => 'Are you sure?'}, :method => :delete

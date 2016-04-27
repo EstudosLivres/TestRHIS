@@ -1,0 +1,8 @@
+# encoding: UTF-8
+# pt-BR translations for Controllers
+pt-BR:
+  controllers:
+    classrooms: Turmas & Matrículas
+    courses: Cursos
+    report: Relatório
+    students: Estudantes
