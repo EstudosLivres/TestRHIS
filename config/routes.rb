@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :classrooms
 
   # RootRoute main LandingPage
-  root to: 'home#index'
+  root to: 'report#index'
 end

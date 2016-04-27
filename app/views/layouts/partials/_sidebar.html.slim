@@ -4,31 +4,22 @@
     .logo
       a.simple-text href="#" RHIS Aulas
     ul.nav
-      li.active
-        a href="#"
-          i.ti-panel
-          p Dashboard
-      li
-        a href="#"
+      li class="#{current_controller_path?(:report)}"
+        =link_to root_path
+          i.ti-pie-chart
+          p Relatório
+
+      li class="#{current_controller_path?(:courses)}"
+        =link_to courses_path
+          i.ti-bookmark-alt
+          p Cursos
+
+      li class="#{current_controller_path?(:students)}"
+        =link_to students_path
           i.ti-user
-          p User Profile
-      li
-        a href="#"
+          p Estudantes
+
+      li class="#{current_controller_path?(:classrooms)}"
+        =link_to classrooms_path
           i.ti-view-list-alt
-          p Table List
-      li
-        a href="#"
-          i.ti-text
-          p Typography
-      li
-        a href="#"
-          i.ti-pencil-alt2
-          p Icons
-      li
-        a href="#"
-          i.ti-map
-          p Maps
-      li
-        a href="#"
-          i.ti-bell
-          p Notifications
+          p Turmas
