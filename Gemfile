@@ -46,6 +46,22 @@ gem 'responders', '~> 2.1', '>= 2.1.2'
 # ENUM gem
 gem 'enumerate_it', '~> 1.2', '>= 1.2.9'
 
+=begin
+ ######################    ViewGEMs    #################################
+=end
+
+# IconFonts - FontAwesome
+gem 'font-awesome-rails', '~> 4.6', '>= 4.6.1.0'
+
+# IconFonts - Themify
+gem 'themify-icons-rails', '~> 1.0', '>= 1.0.1.1'
+
+# Creative-Tim assets GEM
+gem 'creative_tim', '~> 1.0'
+
+# Mask Input for jQuery
+gem 'jquery-mask-plugin', '~> 0.1.0'
+
 group :development, :test do
   # RSPec for BDD practices
   gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
