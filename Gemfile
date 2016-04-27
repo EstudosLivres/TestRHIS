@@ -50,6 +50,9 @@ gem 'enumerate_it', '~> 1.2', '>= 1.2.9'
  ######################    ViewGEMs    #################################
 =end
 
+# Animated Progress link/screen transaction
+gem 'nprogress-rails', '~> 0.1.6.7'
+
 # IconFonts - FontAwesome
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.1.0'
 

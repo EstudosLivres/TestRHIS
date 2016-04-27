@@ -1,0 +1,19 @@
+/*
+ * Frameworks
+ *= require font-awesome
+ *= require themify-icons
+ *= require creative-tim/paper_dashboard/bootstrap.min
+ *= require creative-tim/paper_dashboard/animate.min
+ *= require creative-tim/paper_dashboard/paper-dashboard
+ *= require creative-tim/paper_dashboard/demo
+ *
+ * Fixes
+ *= stub scaffolds.scss
+ *
+ * My Styles
+ *= require_tree .
+*/
+
+.card .stats i {
+  margin-right: 4px;
+}

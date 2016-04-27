@@ -105,6 +105,7 @@ GEM
     multi_json (1.11.3)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
+    nprogress-rails (0.1.6.7)
     pg (0.18.4)
     rack (1.6.4)
     rack-test (0.6.3)
@@ -224,6 +225,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-mask-plugin (~> 0.1.0)
   jquery-rails
+  nprogress-rails (~> 0.1.6.7)
   pg (~> 0.15)
   rails (= 4.2.6)
   responders (~> 2.1, >= 2.1.2)

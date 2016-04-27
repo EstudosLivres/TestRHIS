@@ -4,5 +4,15 @@ html
     title RHIS O melhor Gerenciador de Turmas
     =stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     =javascript_include_tag 'application', 'data-turbolinks-track' => true
-   body
-     =yield
+  body
+    .wrapper
+      = render 'layouts/partials/sidebar'
+
+    .main-panel
+      = render 'layouts/partials/nav_bar'
+
+      .content
+        .container-fluid
+          = yield
+
+    =javascript_include_tag 'application', 'data-turbolinks-track' => true

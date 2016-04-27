@@ -1,0 +1,32 @@
+nav.navbar.navbar-default
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle type="button"
+        span.sr-only Toggle navigation
+        span.icon-bar.bar1
+        span.icon-bar.bar2
+        span.icon-bar.bar3
+      a.navbar-brand href="#" Dashboard
+
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-right
+        li
+          a href="#" class="dropdown-toggle" data-toggle="dropdown"
+            i class="ti-panel"
+            p Stats
+        li.dropdown
+          a href="#" class="dropdown-toggle" data-toggle="dropdown"
+            i class="ti-bell"
+            p class="notification" 5
+            p Notifications
+            b.caret
+          ul.dropdown-menu
+            li: a href="#" Notification 1 
+            li: a href="#" Notification 2 
+            li: a href="#" Notification 3 
+            li: a href="#" Notification 4 
+            li: a href="#" Another notification
+        li
+          a href="#"
+            i.ti-settings
+            p Settings
