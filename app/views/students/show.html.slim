@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @student.name
+p
+  strong Register number:
+  = @student.register_number
+p
+  strong Status:
+  = @student.status
+
+= link_to 'Edit', edit_student_path(@student)
+'|
+= link_to 'Back', students_path

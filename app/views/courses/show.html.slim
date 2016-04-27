@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @course.name
+p
+  strong Description:
+  = @course.description
+p
+  strong Status:
+  = @course.status
+
+= link_to 'Edit', edit_course_path(@course)
+'|
+= link_to 'Back', courses_path
