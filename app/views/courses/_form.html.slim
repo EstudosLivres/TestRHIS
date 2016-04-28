@@ -1,18 +1,28 @@
 = form_for @course do |f|
   - if @course.errors.any?
-    #error_explanation
+    .alert.alert-danger
       h2 = "#{pluralize(@course.errors.count, "error")} prohibited this course from being saved:"
       ul
         - @course.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :description
-    = f.text_field :description
-  .field
-    = f.label :status
-    = f.number_field :status
-  .actions = f.submit
+  .row
+    .col-md-12
+      .form-group
+        = f.label :name
+        = f.text_field :name, class: 'form-control border-input', required: true
+
+  .row
+    .col-md-12
+      .form-group
+        = f.label :description
+        = f.text_area :description, class: 'form-control border-input', required: true
+
+  .actions = f.submit class: 'right btn btn-success btn-wd'
+  = link_to 'Voltar', courses_path, class: 'left btn btn-info btn-wd'
+
+  .row
+    .col-md-offset-3.col-md-2
+      .checkbox
+        = f.check_box :status
+        = f.label :status

@@ -8,9 +8,9 @@ class CoursesController < ApplicationController
     respond_with(@courses)
   end
 
-  def show
-    respond_with(@course)
-  end
+  # def show
+  #   respond_with(@course)
+  # end
 
   def new
     @course = Course.new
@@ -23,12 +23,12 @@ class CoursesController < ApplicationController
   def create
     @course = Course.new(course_params)
     @course.save
-    respond_with(@course)
+    respond_with(@course, location: courses_path)
   end
 
   def update
     @course.update(course_params)
-    respond_with(@course)
+    respond_with(@course, location: courses_path)
   end
 
   def destroy

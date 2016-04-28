@@ -1,7 +1,7 @@
 pt-BR:
   helpers:
     select:
-      prompt: Por favor selecione
+      prompt: Por favor selecione uma opção
     submit:
       create: Criar %{model}
       submit: Salvar %{model}

@@ -1,18 +1,39 @@
 = form_for @classroom do |f|
   - if @classroom.errors.any?
-    #error_explanation
+    .alert.alert-danger
       h2 = "#{pluralize(@classroom.errors.count, "error")} prohibited this classroom from being saved:"
       ul
         - @classroom.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :student
-    = f.text_field :student
-  .field
-    = f.label :course
-    = f.text_field :course
-  .field
-    = f.label :entry_at
-    = f.datetime_select :entry_at
-  .actions = f.submit
+  .row
+    .col-md-12
+      .form-group
+        = f.label :course
+        = f.collection_select(:course_id, @courses, :id, :name, options={prompt: true}, html={class: 'form-control', required: true})
+
+  .row
+    .card.no-shawdow
+      .header
+        h4.title Selecione os Estudantes
+      .content
+        .row
+          .col-md-12
+            ul class="in-line-list list-unstyled team-members"
+              -@students.each_with_index do |student, i|
+                li.col-md-3
+                  .col-xs-4
+                    .avatar
+                      =image_tag 'profile.jpg'
+                  .col-xs-3
+                    =student.name
+                    .text-muted =student.status
+                  .col-xs-3
+                    .checkbox
+                      input type="checkbox" name="classroom[student_id][#{i}]" value="#{student.id}"
+
+  .row
+    .col-md-4.col-md-offset-2
+      = link_to 'Voltar', back_action, class: 'btn btn-info btn-wd'
+    .col-md-4
+      .actions = f.submit class: 'btn btn-success btn-wd'

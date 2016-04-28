@@ -2,26 +2,27 @@
   .col-md-12
     .card
       .header
+        a.btn.btn-info.btn-wd.right href="#{new_course_path}" =t('actions.courses.new')
         h4.title =t('actions.courses.index')
         p.category Acesse o link Turmas para Associar Alunos ao Curso
       .content.table-responsive.table-full-width
         table.table.table-striped
           thead
             tr
-              th ID
-              th Name
-              th Description
-              th Status
               th
+              th =t('activerecord.attributes.course.name')
+              th =t('activerecord.attributes.course.description')
+              th =t('activerecord.attributes.course.status')
+              /th
               th
               th
           tbody
             - @courses.each do |course|
               tr
-                td =course.id
-                td = course.name
-                td = course.description
-                td = course.status
-                td = link_to 'Show', course
-                td = link_to 'Edit', edit_course_path(course)
-                td = link_to 'Destroy', course, data: {:confirm => 'Are you sure?'}, :method => :delete
+                td
+                td =course.name
+                td =course.description
+                td =course.status_humanize
+                /td =link_to 'Visualizar', course
+                td =link_to 'Editar', edit_course_path(course)
+                td =link_to 'Deletar', course, data: {:confirm => 'Você tem certeza?'}, :method => :delete

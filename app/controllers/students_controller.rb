@@ -8,9 +8,9 @@ class StudentsController < ApplicationController
     respond_with(@students)
   end
 
-  def show
-    respond_with(@student)
-  end
+  # def show
+  #   respond_with(@student)
+  # end
 
   def new
     @student = Student.new
@@ -23,12 +23,12 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(student_params)
     @student.save
-    respond_with(@student)
+    respond_with(@student, location: students_path)
   end
 
   def update
     @student.update(student_params)
-    respond_with(@student)
+    respond_with(@student, location: students_path)
   end
 
   def destroy

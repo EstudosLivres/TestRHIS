@@ -1,25 +1,35 @@
-h1 Listing students
+.row
+  .col-md-12
+    .card
+      .header
+        a.btn.btn-info.btn-wd.right href="#{new_student_path}" =t('actions.students.new')
+        h4.title =t('actions.students.index')
+        p.category Acesse o link Turmas para Associar Alunos à Cursos
+      .content.table-responsive.table-full-width
+        table.table.table-striped
+          thead
+            tr
+              th
+              th =t('activerecord.attributes.student.name')
+              th =t('activerecord.attributes.student.register_number')
+              th =t('activerecord.attributes.student.status')
+              /th
+              th
+              th
 
-table
-  thead
-    tr
-      th Name
-      th Register number
-      th Status
-      th
-      th
-      th
-
-  tbody
-    - @students.each do |student|
-      tr
-        td = student.name
-        td = student.register_number
-        td = student.status
-        td = link_to 'Show', student
-        td = link_to 'Edit', edit_student_path(student)
-        td = link_to 'Destroy', student, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-br
-
-= link_to 'New Student', new_student_path
+          tbody
+            - @students.each do |student|
+              tr
+                td
+                td =student.name
+                td =student.register_number
+                td =student.status_humanize
+                /td
+                /  =link_to student do
+                /    i.ti-eye
+                td
+                  =link_to edit_student_path(student) do
+                    i.ti-pencil-alt
+                td
+                  =link_to student, data: {:confirm => 'Você tem certeza?'}, method: :delete, class: 'text-danger' do
+                    i.ti-trash

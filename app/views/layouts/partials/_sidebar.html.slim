@@ -4,10 +4,10 @@
     .logo
       a.simple-text href="#" RHIS Aulas
     ul.nav
-      li class="#{current_controller_path?(:report)}"
-        =link_to root_path
-          i.ti-pie-chart
-          p = t('controllers.report')
+      /li class="#{current_controller_path?(:report)}"
+      /  =link_to root_path
+      /    i.ti-pie-chart
+      /    p = t('controllers.report')
 
       li class="#{current_controller_path?(:courses)}"
         =link_to courses_path

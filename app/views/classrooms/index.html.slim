@@ -2,24 +2,29 @@
   .col-md-12
     .card
       .header
+        a.btn.btn-info.btn-wd.right href="#{new_classroom_path}" =t('actions.classrooms.new')
         h4.title Lista de Turmas
         p.category Associe quantos alunos quiser a cada Turma
       .content.table-responsive.table-full-width
         table.table.table-striped
           thead
             tr
-              th Curso
-              th Total de Estudantes
-              th
-              th
+              th =t('activerecord.attributes.classroom.course')
+              th =t('activerecord.attributes.classroom.student')
+              th =t('activerecord.attributes.classroom.entry_at')
+              /th
               th
               th
           tbody
             - @classrooms.each do |classroom|
               tr
-                td = classroom.student
-                td = classroom.course
-                td = classroom.entry_at
-                td = link_to 'Show', classroom
-                td = link_to 'Edit', edit_classroom_path(classroom)
-                td = link_to 'Destroy', classroom, data: {:confirm => 'Are you sure?'}, :method => :delete
+                td =classroom.course.name
+                td =classroom.student.name
+                td =l classroom.entry_at, format: :long
+                /td =link_to 'Show', classroom
+                td
+                  =link_to edit_classroom_path(classroom) do
+                    i.ti-pencil-alt
+                td
+                  = link_to classroom, data: {:confirm => 'Você tem certeza?'}, method: :delete, class: 'text-danger' do
+                    i.ti-trash

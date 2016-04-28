@@ -1,5 +1,7 @@
-h1 New classroom
-
-== render 'form'
-
-= link_to 'Back', classrooms_path
+.row
+  .col-md-12
+    .card
+      .header
+        h4.title = t('actions.classrooms.new')
+      .content
+        = render 'form'

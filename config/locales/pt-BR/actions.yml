@@ -2,8 +2,14 @@
 # pt-BR translations for Controllers Actions
 pt-BR:
   actions:
+    defaults:
+      index: Listar
+      show: Visualizar
+      edit: Editar
+      destroy: Deletar
+
     classrooms:
-      index: Lista de  Turmas e Matrículas
+      index: Lista de Turmas e Matrículas
       show: Turma e Matrícula
       new: Matricular
       create: Matricular
@@ -11,10 +17,10 @@ pt-BR:
       update: Atualizar Matrícula
 
     courses:
-      index: Lista de Cursos
+      index: Lista Cursos
       show: Curso
-      new: Cadastro de Curso
-      create: Cadastro de Curso
+      new: Cadastrar Curso
+      create: Cadastrar Curso
       edit: Atualizar Curso
       update: Atualizar Curso
 
@@ -23,9 +29,9 @@ pt-BR:
       index: Relatório
 
     students:
-      index: Lista de Estudantes
+      index: Lista Estudantes
       show: Estudante
-      new: Cadastro de Estudante
-      create: Cadastro de Estudante
+      new: Cadastrar Estudante
+      create: Cadastrar Estudante
       edit: Atualizar Estudante
       update: Atualizar Estudante

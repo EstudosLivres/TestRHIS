@@ -1,12 +1,8 @@
 // Rails Frameworks
 //=require jquery
-//=require jquery.turbolinks
 //=require jquery_ujs
-//=require turbolinks
 
 // PlugIns
-//=require nprogress
-//=require nprogress-turbolinks
 //=require jquery.mask.min
 
 // Theme (CreativeTim)
@@ -19,3 +15,11 @@
 
 // App Files
 //= require_tree ./app
+
+function setup() {
+    // setup masks
+    if($('.numeric').length) $('.numeric').mask('9999999999')
+}
+
+$(setup);
+$(document).on('page:load', setup);

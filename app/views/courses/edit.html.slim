@@ -1,8 +1,7 @@
-h1 Editing course
-
-== render 'form'
-
-= link_to 'Show', @course
-'|
-= link_to 'Back', courses_path
-
+.row
+  .col-md-12
+    .card
+      .header
+        h4.title = t('actions.courses.edit')
+      .content
+        = render 'form'

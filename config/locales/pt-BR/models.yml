@@ -13,13 +13,13 @@ pt-BR:
       course:
         name: Nome
         description: Descrição
-        status: Estado
+        status: Ativo
 
   # Student -----------------------------------------------------
       student:
         name: Nome
         register_number: Número de Registro
-        status: Estado
+        status: Ativo
 
   # Classroom -----------------------------------------------------
       classroom:
