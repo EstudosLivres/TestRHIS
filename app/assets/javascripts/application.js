@@ -1,6 +1,8 @@
 // Rails Frameworks
 //=require jquery
+//require jquery.turbolinks
 //=require jquery_ujs
+//require turbolinks
 
 // PlugIns
 //=require jquery.mask.min

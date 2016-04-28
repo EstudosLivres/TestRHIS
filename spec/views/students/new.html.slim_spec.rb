@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "students/new", type: :view do
   before(:each) do
+    params[:controller] = 'students'
     assign(:student, Student.new(
       :name => "MyString",
       :register_number => "MyString",

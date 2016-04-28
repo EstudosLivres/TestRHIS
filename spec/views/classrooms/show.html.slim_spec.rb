@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe "classrooms/show", type: :view do
   before(:each) do
     @classroom = assign(:classroom, Classroom.create!(
-      :student => nil,
-      :course => nil
+        student: create(:student, nil, nil),
+        course: create(:course, nil, nil)
     ))
   end
 

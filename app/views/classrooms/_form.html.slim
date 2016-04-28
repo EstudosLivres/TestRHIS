@@ -25,12 +25,12 @@
                   .col-xs-4
                     .avatar
                       =image_tag 'profile.jpg'
-                  .col-xs-3
+                  .col-xs-4
                     =student.name
                     .text-muted =student.status
                   .col-xs-3
                     .checkbox
-                      input type="checkbox" name="classroom[student_id][#{i}]" value="#{student.id}"
+                      input id="classroom_student_#{i}" type="checkbox" name="classroom[student_id][#{i}]" value="#{student.id}"
 
   .row
     .col-md-4.col-md-offset-2

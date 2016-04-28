@@ -19,16 +19,21 @@ require 'rails_helper'
 # that an instance is receiving a specific message.
 
 RSpec.describe ClassroomsController, type: :controller do
+  before :all do
+    @course = create(:course)
+    @student = create(:student)
+  end
 
   # This should return the minimal set of attributes required to create a valid
   # Classroom. As you add validations to Classroom, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    # emulate the JS framework bug
+    { student_id: @student.id, course_id: @course.id }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    { student_id: nil, course_id: @course.id }
   }
 
   # This should return the minimal set of values that should be in the session
@@ -71,7 +76,7 @@ RSpec.describe ClassroomsController, type: :controller do
     context "with valid params" do
       it "creates a new Classroom" do
         expect {
-          post :create, {:classroom => valid_attributes}, valid_session
+          post :create, { :classroom => { student_id: [@student.id, '0'], course_id: @course.id } }, valid_session
         }.to change(Classroom, :count).by(1)
       end
 
@@ -83,7 +88,7 @@ RSpec.describe ClassroomsController, type: :controller do
 
       it "redirects to the created classroom" do
         post :create, {:classroom => valid_attributes}, valid_session
-        expect(response).to redirect_to(Classroom.last)
+        expect(response).to redirect_to(classrooms_path)
       end
     end
 
@@ -115,14 +120,14 @@ RSpec.describe ClassroomsController, type: :controller do
 
       it "assigns the requested classroom as @classroom" do
         classroom = Classroom.create! valid_attributes
-        put :update, {:id => classroom.to_param, :classroom => valid_attributes}, valid_session
+        put :update, {:id => classroom.to_param, :classroom => { student_id: ['0', @student.id], course_id: @course.id } }, valid_session
         expect(assigns(:classroom)).to eq(classroom)
       end
 
       it "redirects to the classroom" do
         classroom = Classroom.create! valid_attributes
         put :update, {:id => classroom.to_param, :classroom => valid_attributes}, valid_session
-        expect(response).to redirect_to(classroom)
+        expect(response).to redirect_to(classrooms_path)
       end
     end
 
@@ -134,9 +139,9 @@ RSpec.describe ClassroomsController, type: :controller do
       end
 
       it "re-renders the 'edit' template" do
-        classroom = Classroom.create! valid_attributes
+        classroom = Classroom.create! invalid_attributes
         put :update, {:id => classroom.to_param, :classroom => invalid_attributes}, valid_session
-        expect(response).to render_template("edit")
+        expect(response).to render_template('edit')
       end
     end
   end

@@ -4,19 +4,22 @@ RSpec.describe "classrooms/index", type: :view do
   before(:each) do
     assign(:classrooms, [
       Classroom.create!(
-        :student => nil,
-        :course => nil
+        entry_at: Time.now,
+        student: create(:student, nil, nil),
+        course: create(:course, nil, nil)
       ),
+
       Classroom.create!(
-        :student => nil,
-        :course => nil
+        entry_at: Time.now,
+        student: create(:student, nil, nil),
+        course: create(:course, nil, nil)
       )
     ])
   end
 
   it "renders a list of classrooms" do
     render
-    assert_select "tr>td", :text => nil.to_s, :count => 2
-    assert_select "tr>td", :text => nil.to_s, :count => 2
+    assert_select "tr", :count => ['tr thead', 'first classroom assigned', 'second classroom assigned'].length
+    assert_select "tr>td", :count => [:course, :student, :entry_at, :edit, :delete].length*[:assigned_class_1, :assigned_class_2].length
   end
 end

@@ -2,10 +2,11 @@ require 'rails_helper'
 
 RSpec.describe "students/edit", type: :view do
   before(:each) do
+    params[:controller] = 'students'
     @student = assign(:student, Student.create!(
-      :name => "MyString",
-      :register_number => "MyString",
-      :status => 1
+      :name => Faker::Name.name,
+      :register_number => Faker::Number.number(10),
+      :status => Faker::Number.between(0, 1)
     ))
   end
 

@@ -12,7 +12,6 @@
               th =t('activerecord.attributes.classroom.course')
               th =t('activerecord.attributes.classroom.student')
               th =t('activerecord.attributes.classroom.entry_at')
-              /th
               th
               th
           tbody
@@ -21,10 +20,9 @@
                 td =classroom.course.name
                 td =classroom.student.name
                 td =l classroom.entry_at, format: :long
-                /td =link_to 'Show', classroom
                 td
                   =link_to edit_classroom_path(classroom) do
                     i.ti-pencil-alt
                 td
-                  = link_to classroom, data: {:confirm => 'Você tem certeza?'}, method: :delete, class: 'text-danger' do
+                  =link_to classroom, data: {:confirm => 'Você tem certeza?'}, method: :delete, class: 'text-danger' do
                     i.ti-trash

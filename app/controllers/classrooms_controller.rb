@@ -22,12 +22,14 @@ class ClassroomsController < ApplicationController
   def edit
   end
 
+  # TODO accepts_nested_attributres_for
   def create
-    if @course.nil?
-      respond_with(Classroom.new)
+    if @course.nil? || @students.empty?
+      @classroom = Classroom.new(course: @course, student: @student_ids.first)
+      @classroom.save
+      respond_with(@classroom)
     else
-      students = params[:classroom][:student_id]
-      students.each_with_index do |s, i|
+      @student_ids.each do |s|
         @course.classrooms << Classroom.new(student_id: s.last)
       end
 
@@ -37,7 +39,15 @@ class ClassroomsController < ApplicationController
   end
 
   def update
-    @classroom.update(classroom_params)
+    if @course.nil?
+      respond_with(@classroom)
+    else
+      @student_ids.each do |s|
+        @course.classrooms << Student.where(id: s).take
+      end
+    end
+
+    @course.save
     respond_with(@classroom, location: classrooms_path)
   end
 
@@ -62,5 +72,10 @@ class ClassroomsController < ApplicationController
 
     def set_nested
       @course = Course.where(id: params[:classroom][:course_id]).take
+
+      # Fixing view framework bug for checkbox (it framework duplicate the checkboxes)
+      @student_ids = params[:classroom][:student_id]
+      @student_ids = [@student_ids] if @student_ids.is_a?String
+      @student_ids = @student_ids.to_a unless @student_ids.is_a?Array
     end
 end

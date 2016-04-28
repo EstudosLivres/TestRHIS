@@ -5,7 +5,6 @@
  *= require creative-tim/paper_dashboard/bootstrap.min
  *= require creative-tim/paper_dashboard/animate.min
  *= require creative-tim/paper_dashboard/demo
- *= require creative-tim/paper_dashboard/paper-dashboard
  *
  * Fixes
  *= stub scaffolds.scss
@@ -15,3 +14,4 @@
 */
 
 @import 'ionicons';
+@import "creative-tim/paper_dashboard/paper-dashboard";

@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :course do
-    name "MyString"
-    description "MyString"
-    status 1
+    name Faker::Name.name
+    description  Faker::Lorem.sentence(3, false, 0)
+    status Faker::Number.between(0, 1)
   end
 end

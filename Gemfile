@@ -65,7 +65,7 @@ gem 'font-awesome-rails', '~> 4.6', '>= 4.6.1.0'
 gem 'themify-icons-rails', '~> 1.0', '>= 1.0.1.1'
 
 # Creative-Tim assets GEM
-gem 'creative_tim', '~> 1.0'
+gem 'creative_tim', '~> 1.0.5'
 
 # Mask Input for jQuery
 gem 'jquery-mask-plugin', '~> 0.1.0'
@@ -102,3 +102,8 @@ group :development do
   gem 'spring'
 end
 
+# Heroku pre compile
+gem 'rails_12factor', group: :production
+
+# Tracking production events
+gem 'newrelic_rpm', '~> 3.14.1.311'

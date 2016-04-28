@@ -10,5 +10,5 @@ class Student < ActiveRecord::Base
   # Rails validations
   validates :name, length: { maximum: 45 }, presence: true, on: [:create, :update]
   validates :register_number, length: { maximum: 45 }, presence: true, on: [:create, :update]
-  validates :status, numericality: true, inclusion: { in: 0..10 }, presence: true, presence: true, on: [:create, :update]
+  validates :status, numericality: true, inclusion: { in: 0..10 }, presence: true, on: [:create, :update]
 end
