@@ -62,7 +62,7 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.1)
-    creative_tim (1.0.5)
+    creative_tim (1.0.12)
       railties (> 3.1, < 5.0)
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
@@ -227,7 +227,7 @@ DEPENDENCIES
   byebug
   capybara (~> 2.7)
   coffee-rails (~> 4.1.0)
-  creative_tim (~> 1.0.5)
+  creative_tim (~> 1.0.12)
   enumerate_it (~> 1.2, >= 1.2.9)
   factory_girl_rails (~> 4.7)
   faker (~> 1.6, >= 1.6.3)
